@@ -3,7 +3,7 @@ FROM centos:7
 MAINTAINER kballou@devnulllabs.io
 
 ENV LANG="en_US.UTF-8"
-ENV OTP_VER="18.3.3"
+ENV OTP_VER="18.3.4"
 ENV REBAR_VERSION="2.6.1"
 ENV REBAR3_VERSION="3.1.0"
 ENV ELIXIR_VERSION="1.2.5"
@@ -16,7 +16,7 @@ RUN set -xe \
         unixODBC-devel \
         openssl-devel \
     && OTP_SRC_URL="https://github.com/erlang/otp/archive/OTP-$OTP_VER.tar.gz" \
-    && OTP_SRC_SUM="70d50dd5970379cf0cd818bc5e21a1a809b9976c9ddd3a3b8ebde1e1c95ab8c3" \
+    && OTP_SRC_SUM="d9e68a8cdef4db0935b02d4b163cf3af403405f756488874736298cf48b90ae9" \
     && curl -fSL "$OTP_SRC_URL" -o otp-src.tar.gz \
     && echo "${OTP_SRC_SUM}  otp-src.tar.gz" | sha256sum -c - \
     && mkdir -p /usr/src/otp-src \
