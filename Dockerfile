@@ -5,7 +5,7 @@ MAINTAINER kballou@devnulllabs.io
 ENV LANG="en_US.UTF-8"
 ENV OTP_VER="18.3.4"
 ENV REBAR_VERSION="2.6.1"
-ENV REBAR3_VERSION="3.1.0"
+ENV REBAR3_VERSION="3.2.0"
 ENV ELIXIR_VERSION="1.2.6"
 
 RUN set -xe \
@@ -43,7 +43,7 @@ RUN set -xe \
     && cd /usr/src \
     && rm -rf /usr/src/rebar-src \
     && REBAR3_SRC_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION##*@}.tar.gz" \
-    && REBAR3_SRC_SUM="b426cf7829d5df0d6d3e50cd501a1688bdbc878b0ca69d63240a0614afbd9c64" \
+    && REBAR3_SRC_SUM="78ad27372eea6e215790e161ae46f451c107a58a019cc7fb4551487903516455" \
     && mkdir -p /usr/src/rebar3-src \
     && curl -fSL "$REBAR3_SRC_URL" -o rebar3-src.tar.gz \
     && echo "${REBAR3_SRC_SUM}  rebar3-src.tar.gz" | sha256sum -c - \
