@@ -6,7 +6,7 @@ ENV LANG="en_US.UTF-8"
 ENV OTP_VER="19.0"
 ENV REBAR_VERSION="2.6.1"
 ENV REBAR3_VERSION="3.2.0"
-ENV ELIXIR_VERSION="1.3.1"
+ENV ELIXIR_VERSION="1.3.2"
 
 RUN set -xe \
     && yum -y groupinstall "Development Tools" \
@@ -55,7 +55,7 @@ RUN set -xe \
     && cd /usr/src \
     && rm -rf /usr/src/rebar3-src \
     && ELIXIR_SRC_URL="https://github.com/elixir-lang/elixir/archive/v$ELIXIR_VERSION.tar.gz" \
-    && ELIXIR_SRC_SUM="c4ab90a0d8d7ed4159dd6b7e1bcbcdbdb8c6177a35328d774fccf00346b4b42c" \
+    && ELIXIR_SRC_SUM="be24efee0655206063208c5bb4157638310ff7e063b7ebd9d79e1c77e8344c4b" \
     && curl -fSL "$ELIXIR_SRC_URL" -o elixir.tar.gz \
     && echo "${ELIXIR_SRC_SUM}  elixir.tar.gz" | sha256sum -c - \
     && mkdir -p /usr/src/elixir-src \
